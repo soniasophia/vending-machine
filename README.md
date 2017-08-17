@@ -1,4 +1,4 @@
-##Javascript Vending Machine
+# Javascript Vending Machine
 
 ### Project Objective
 #### Development
