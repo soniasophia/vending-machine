@@ -122,22 +122,15 @@ describe('Vending Machine', () => {
 
   describe('When money is inserted', () => {
     it('should check to see if there is payment', () => {
-      const received = test.machine.dispenseProduct()
+      const received = test.machine.checkMoney()
       const expected = false
       expect(received).toBe(expected)
     })
 
     it('should check to see if the money inserted is an accepted type', () => {
-      const received = test.machine.dispenseProduct(1, 20.00)
+      const received = test.machine.checkMoney(20.00)
       const expected = false
       expect(received).toBe(expected)
     })
-
-    it('should check to see if the selected product id is valid', () => {
-      const received = test.machine.dispenseProduct(7, 1.00)
-      const expected = false
-      expect(received).toBe(expected)
     })
   })
-
-})

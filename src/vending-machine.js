@@ -37,6 +37,18 @@ class VendingMachine {
     }
   }
 
+  checkMoney(payment) {
+    if (payment) {
+      for (var i in this.vmData.inventory) {
+        if (this.vmData.inventory.hasOwnProperty(i)) {
+          if (payment === this.vmData.cashRegister[i].value) {
+            return true;
+          } return false;
+        }
+      }
+    } return false;
+  }
+
   dispenseProduct(productId, payment) {
     if (productId && payment) {
       for (var i in this.vmData.inventory) {
