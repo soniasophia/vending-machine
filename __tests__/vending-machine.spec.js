@@ -96,4 +96,12 @@ describe('Vending Machine', () => {
     })
   })
 
+  describe('When the inventory quantity of any item is equal to or below 10', () => {
+    it('should refill the inventory quantity back up to 50 items', () => {
+      const received = test.machine.refillInventory()
+      const expected = 50
+      expect(received).toBe(expected)
+    })
+  })
+
 })
