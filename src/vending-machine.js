@@ -1,85 +1,76 @@
-const Treats = {
-  chips: {
-    1: {
-      id: 1,
-      name: "Chips",
-      cost: 1.00,
-      quantity: 10
-    }
-  },
-  soda: {
-    2: {
-      id: 2,
-      name: "Soda",
-      cost: 1.25,
-      quantity: 10
-    }
-  },
-  candy: {
-    3: {
-      id: 3,
-      name: "Candy",
-      cost: 1.50,
-      quantity: 10
-    }
-  },
-  nuts: {
-    4: {
-      id: 4,
-      name: "Nuts",
-      cost: 2.50,
-      quantity: 10
-    }
-  }
-}
+const inventory = require('../inventory.json');
+const testData = require('../__mock__/test-data');
 
-const Money = {
+const cashRegister = {
+  five: {
+    name: "Five",
+    value: 5.00,
+    quantity: 20
+  },
   dollar: {
-    1: {
-      id: 1,
-      name: "Dollar",
-      value: 1.00
-    }
+    name: "Dollar",
+    value: 1.00,
+    quantity: 100
   },
   toonie: {
-    2: {
-      id: 2,
-      name: "Toonie",
-      value: 2.00
-    }
+    name: "Toonie",
+    value: 2.00,
+    quantity: 50
   },
   quarter: {
-    3: {
-      id: 3,
-      name: "Quarter",
-      value: 0.25
-    }
+    name: "Quarter",
+    value: 0.25,
+    quantity: 100
   },
   dime: {
-    4: {
-      id: 4,
-      name: "Dime",
-      value: 0.10
-    }
+    name: "Dime",
+    value: 0.10,
+    quantity: 50
   },
   nickel: {
-    5: {
-      id: 5,
-      name: "Nickel",
-      value: 0.05
-    }
+    name: "Nickel",
+    value: 0.05,
+    quantity: 50
   }
 }
-
-
 
 class VendingMachine {
-  constructor() {
+  constructor(data) {
+    // this.product = inventory;
+    // this.cash = cashRegister;
+    this.vmData = testData(data)
+  }
 
+  printInventory() {
+    return this.vmData.inventory
+  }
+
+
+  refillInventory() {
+    const refill = 50;
+    for(var i = 0; i < this.vmData.inventory.length; i++) {
+      if(this.vmData.inventory[i].quantity <= 10) {
+        var refillProducts = refill - this.vmData.inventory[i].quantity;
+        return refillProducts + this.vmData.inventory[i].quantity;
+      }
+    }
+  }
+
+  resupplyChange() {
 
   }
-}
 
+  dispenseProduct() {
+
+  }
+
+  returnChange() {
+
+  }
+
+
+
+}
 
 
 module.exports = {

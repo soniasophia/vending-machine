@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Chips",
+    "price": 1.00,
+    "quantity": 10
+  },
+  {
+    "name": "Soda",
+    "price": 1.25,
+    "quantity": 30
+  },
+  {
+    "name": "Candy",
+    "price": 1.50,
+    "quantity": 40
+  },
+  {
+    "name": "Nuts",
+    "price": 2.50,
+    "quantity": 10
+  }
+]
