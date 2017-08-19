@@ -120,4 +120,12 @@ describe('Vending Machine', () => {
     })
   })
 
+  describe('When money is inserted', () => {
+    it('should check to see if there is payment', () => {
+      const received = test.machine.dispenseProduct()
+      const expected = false
+      expect(received).toBe(expected)
+    })
+  })
+
 })
