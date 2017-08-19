@@ -126,6 +126,12 @@ describe('Vending Machine', () => {
       const expected = false
       expect(received).toBe(expected)
     })
+
+    it('should check to see if the money inserted is an accepted type', () => {
+      const received = test.machine.dispenseProduct(1, 20.00)
+      const expected = false
+      expect(received).toBe(expected)
+    })
   })
 
 })

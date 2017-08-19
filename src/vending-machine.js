@@ -41,7 +41,7 @@ class VendingMachine {
     if (productId && payment) {
       for (var i in this.vmData.inventory) {
         if (this.vmData.inventory.hasOwnProperty(i)) {
-          if (productId === this.vmData.inventory[i].id && payment >= this.vmData.inventory[i].price) {
+          if (productId === this.vmData.inventory[i].id && payment === this.vmData.inventory[i].price) {
             return this.vmData.inventory[i].name;
           }
         }
