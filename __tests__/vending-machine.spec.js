@@ -41,21 +41,25 @@ describe('Vending Machine', () => {
       ],
       inventory: [
         {
+          id: 1,
           name: "Chips",
           price: 1.00,
           quantity: 10
         },
         {
+          id: 2,
           name: "Soda",
           price: 1.25,
           quantity: 30
         },
         {
+          id: 3,
           name: "Candy",
           price: 1.50,
           quantity: 40
         },
         {
+          id: 4,
           name: "Nuts",
           price: 2.50,
           quantity: 10
@@ -72,33 +76,45 @@ describe('Vending Machine', () => {
       const expected =
         [
           {
-            "name": "Chips",
-            "price": 1.00,
-            "quantity": 10
+            id: 1,
+            name: "Chips",
+            price: 1.00,
+            quantity: 10
           },
           {
-            "name": "Soda",
-            "price": 1.25,
-            "quantity": 30
+            id: 2,
+            name: "Soda",
+            price: 1.25,
+            quantity: 30
           },
           {
-            "name": "Candy",
-            "price": 1.50,
-            "quantity": 40
+            id: 3,
+            name: "Candy",
+            price: 1.50,
+            quantity: 40
           },
           {
-            "name": "Nuts",
-            "price": 2.50,
-            "quantity": 10
+            id: 4,
+            name: "Nuts",
+            price: 2.50,
+            quantity: 10
           }
         ]
       expect(received).toMatchObject(expected)
     })
   })
 
-  describe('When the inventory quantity of any item is equal to or below 10', () => {
+  describe('When the inventory quantity of any product is equal to or below 10', () => {
     it('should refill the inventory quantity back up to 50 items', () => {
       const received = test.machine.refillInventory()
+      const expected = 50
+      expect(received).toBe(expected)
+    })
+  })
+
+  describe('When the cash register quantity of money is below 50', () => {
+    it('should refill the cash register quantity back up to 50', () => {
+      const received = test.machine.resupplyChange()
       const expected = 50
       expect(received).toBe(expected)
     })

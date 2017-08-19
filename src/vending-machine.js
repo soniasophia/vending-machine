@@ -48,8 +48,8 @@ class VendingMachine {
 
   refillInventory() {
     const refill = 50;
-    for(var i = 0; i < this.vmData.inventory.length; i++) {
-      if(this.vmData.inventory[i].quantity <= 10) {
+    for (var i = 0; i < this.vmData.inventory.length; i++) {
+      if (this.vmData.inventory[i].quantity <= 10) {
         var refillProducts = refill - this.vmData.inventory[i].quantity;
         return refillProducts + this.vmData.inventory[i].quantity;
       }
@@ -57,12 +57,16 @@ class VendingMachine {
   }
 
   resupplyChange() {
-
+    const resupply = 50;
+    for (var i = 0; i < this.vmData.cashRegister.length; i++) {
+      if (this.vmData.cashRegister[i].quantity < 50) {
+        var resupplyMoney = resupply - this.vmData.cashRegister[i].quantity;
+        return resupplyMoney + this.vmData.cashRegister[i].quantity;
+      }
+    }
   }
 
-  dispenseProduct() {
 
-  }
 
   returnChange() {
 
