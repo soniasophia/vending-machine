@@ -3,7 +3,7 @@
 ## Project Objective
 ### Development
 - Have at least 10 well-formed, passing tests
-- Contain a reasonably DRY (Don't Repeat Yourself) implementation, though the tests can be verbose
+- Contain a reasonably DRY implementation, though the tests can be verbose
 - Have a screenshot (or screenshots) in its README of the test output in your terminal
 
 ### Functionality

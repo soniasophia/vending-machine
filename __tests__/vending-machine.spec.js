@@ -132,5 +132,13 @@ describe('Vending Machine', () => {
       const expected = false
       expect(received).toBe(expected)
     })
+  })
+
+  describe('When the correct money type is inserted', () => {
+    it('should check to see if the selected product id is valid', () => {
+      const received = test.machine.dispenseProduct(7, 1.00)
+      const expected = false
+      expect(received).toBe(expected)
     })
   })
+})
