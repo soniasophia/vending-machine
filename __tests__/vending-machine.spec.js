@@ -140,5 +140,18 @@ describe('Vending Machine', () => {
       const expected = false
       expect(received).toBe(expected)
     })
+
+    it('should check to see if enough money is inserted for the selected product', () => {
+      const received = test.machine.dispenseProduct(3, 1.00)
+      const expected = false
+      expect(received).toBe(expected)
+    })
+
+    it('should check to see if selecting the product id and inserting payment dispenses the correct product', () => {
+      const received = test.machine.dispenseProduct(2, 1.25)
+      const expected = "Soda"
+      expect(received).toBe(expected)
+    })
   })
+
 })

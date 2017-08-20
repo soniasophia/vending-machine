@@ -12,60 +12,49 @@ class VendingMachine {
     return this.vmData.inventory
   }
 
-
   refillInventory() {
     const refill = 50;
-    for (var i in this.vmData.inventory) {
-      if (this.vmData.inventory.hasOwnProperty(i)) {
+    for (var i = 0; i < this.vmData.inventory.length; i++) {
         if (this.vmData.inventory[i].quantity <= 10) {
-          var refillProducts = refill - this.vmData.inventory[i].quantity;
+          const refillProducts = refill - this.vmData.inventory[i].quantity;
           return refillProducts + this.vmData.inventory[i].quantity;
         }
       }
     }
-  }
 
   resupplyChange() {
     const resupply = 50;
-    for (var i in this.vmData.inventory) {
-      if (this.vmData.inventory.hasOwnProperty(i)) {
+    for (var i = 0; i < this.vmData.cashRegister.length; i++) {
         if (this.vmData.cashRegister[i].quantity < 50) {
-          var resupplyMoney = resupply - this.vmData.cashRegister[i].quantity;
+          const resupplyMoney = resupply - this.vmData.cashRegister[i].quantity;
           return resupplyMoney + this.vmData.cashRegister[i].quantity;
         }
       }
     }
-  }
 
   checkMoney(payment) {
-    if (payment) {
-      for (var i in this.vmData.inventory) {
-        if (this.vmData.inventory.hasOwnProperty(i)) {
-          if (payment === this.vmData.cashRegister[i].value) {
-            return true;
-          } return false;
-        }
+    if(payment) {
+      for(var i = 0; i < this.vmData.cashRegister.length; i++) {
+        if(payment === this.vmData.cashRegister[i].value) {
+          return true;
+        } return false;
       }
     } return false;
   }
 
   dispenseProduct(productId, payment) {
     if (productId && payment) {
-      for (var i in this.vmData.inventory) {
-        if (this.vmData.inventory.hasOwnProperty(i)) {
+      for (var i = 0; i < this.vmData.inventory.length; i++) {
           if (productId === this.vmData.inventory[i].id && payment === this.vmData.inventory[i].price) {
             return this.vmData.inventory[i].name;
           }
         }
-      }
-    } return false;
+      } return false;
+    }
+
+  returnChange(productId, payment) {
+
   }
-
-  returnChange() {
-
-  }
-
-
 
 }
 
