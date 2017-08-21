@@ -154,4 +154,16 @@ describe('Vending Machine', () => {
     })
   })
 
+  describe('When the balance of the payment inserted is more than the selected product\'s price', () => {
+    it('should check to see if too much money is inserted and what the change would be', () => {
+      const received = test.machine.returnChange(1, 2.00)
+      const expected = 1.00
+      expect(received).toBe(expected)
+    })
+
+    it('should return the change by the name of the coin type', () => {
+      
+    })
+  })
+
 })

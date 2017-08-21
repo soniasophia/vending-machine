@@ -1,5 +1,5 @@
 # Javascript Vending Machine
-
+![Vending Machine](https://github.com/soniasophia/vending-machine/blob/master/vending-machine-spec.png)
 ## Project Objective
 ### Development
 - Have at least 10 well-formed, passing tests
